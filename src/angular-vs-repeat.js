@@ -568,7 +568,10 @@
                 __startIndex = 0;
                 __endIndex = 1;
               } else {
-                _warnMismatch();
+                // https://senses.atlassian.net/browse/WEB-5602
+                // sizemismatchによる警告を抑制する
+                // https://github.com/kamilkp/angular-vs-repeat/issues/202
+                // _warnMismatch();
 
                 const relativeScroll = $scrollPosition - options.offsetBefore - scrollOffset;
 
